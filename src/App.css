@@ -1,38 +1,168 @@
-.App {
+*{
+  padding: 0; 
+  margin: 0; 
+}
+
+.wrapper {
+  width: 100%; 
+  height: 100vh; 
+  background-color: aquamarine;
+}
+
+.section-box {
+  box-sizing: border-box;
+  position: absolute;
+  top: 20%; 
+  left: 20%; 
+  min-width: 400px; 
+  min-height: 350px;
+  border-radius: 10px; 
+  background-color: aliceblue;
+  box-shadow: 0 0 5px #aaa, 
+              inset 0 0 2px rgba(0,0,0,0.3);
+  
+  padding: 20px; 
+}
+
+.title{ 
+  font-size: 1.2rem; 
+  text-align: center; 
+  margin: 5px; 
+}
+
+.form-fields {
+  text-align: center;
+  /* border: 1px solid grey;  */
+}
+
+.input {
+  display: inline-block; 
+  padding: 4px; 
+  border: 2px solid transparent; 
+  outline: none; 
+  /* margin: 0 auto;  */
+  /* text-align: center;  */
+  transition: all .3s ease; 
+  width: 71%
+} 
+
+.input:active, .input:focus {
+  border: 2px solid rgb(236, 233, 233); 
+  outline: none; 
+}
+
+.add-button {
+    /* margin: 0 auto;  */
+    background-color: rgb(12, 221, 151);
+    padding: 4px; 
+    border: 2px solid rgb(12, 221, 151); 
+    color: white; 
+    transition: all .3s ease; 
+    width: 25%; 
+}
+
+.add-button:hover {
+  background-color: rgb(90, 212, 172);;
+}
+.clear-list {
+  position: absolute; 
+  bottom: 30px; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+/* Modal info styles */ 
+
+.modal-info {
+  padding: 5px; 
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal-info-green {
+  background-color: rgb(218, 86, 86);
+  color: #efefef; 
+}
+.modal-info-red {
+  background-color: rgb(66, 131, 66);
+  color: #efefef; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Product */ 
+.list {
+  list-style-type: none;
+  width: 400px; 
+  padding: 5px; 
+  margin: 10px auto 0; 
+}
+
+.list li.product {
+  display: flex; 
+  background: rgba(255,255,255,.8);
+  padding: 4px 8px; 
+  color: #333; 
+  margin: 10px; 
+  transition: all .3s ease; 
+}
+
+li.product span:nth-child(1) { 
+  width: 300px; 
+}
+
+li.product span:nth-child(2) {
+  width: 40px; 
+  text-align: right;
+}
+
+li.product span:nth-child(3) {
+  width: 40px; 
+  text-align: right;
+}
+
+li.product:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.separator-div {
+  width: 100%;
+  height: 30px; 
+  background-color: transparent;
+  /* border: 1px solid black; */
+}
+
+/* modal info */ 
+.modal-info {
+  opacity: 0; 
+  margin: 5px auto; 
+  width: 40%; 
+  padding: 8px 13px; 
+  background-color: transparent;
+  color: #333; 
+  font-size: 15px;
+  transition: all .4s ease; 
+}
+
+.modal-info-ok {
+  opacity: 1; 
+  background-color: rgb(29, 238, 168);
+  color: #444; 
+  animation: anime;
+  animation-duration: 0.5s;
+}
+
+.modal-info-warning {
+  opacity: 1;
+  background-color: lightcoral;
+  color: #777; 
+  animation: anime;
+  animation-duration: 0.5s;
+}
+
+@keyframes anime {
+  0% {
+    opacity: 0; 
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 100%; 
   }
 }
